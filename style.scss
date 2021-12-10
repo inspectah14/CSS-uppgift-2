@@ -1,0 +1,221 @@
+  * {
+  font-family: 'Roboto', Arial, sans-serif;
+  margin: 0;
+  text-align: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin flex($wrap, $direction, $justify, $align) {
+  display: flex;
+  flex-wrap: $wrap;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;  
+}
+
+@mixin styled-links {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+  transition: 0.3s;
+  font-weight: 400;
+
+  &:hover {
+    font-weight: 700;
+  }
+}
+
+@mixin background-img-styling {
+  background-color: $bottle-green-light;
+  background-position: center;
+  background-size: cover;
+}
+
+$text-container-color: rgba(255,255,255,0.8);
+$bottle-green-dark: rgb(19, 87, 76);
+$bottle-green-light: rgb(43, 170, 149);
+$heading-font: 'Open Sans', Arial, sans-serif;
+
+.wrapper {
+  width: 100%;
+
+  .header {
+    width: 100%;
+    background:$bottle-green-dark;
+    height: 80px;
+    padding-top: 15px;
+    color: white;
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 8px;
+      letter-spacing: 2px;
+      font-family: $heading-font;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+      font-family: $heading-font;
+    }
+  }
+
+  .nav {
+    width: 100%;
+    background: $bottle-green-light;
+    @include flex(nowrap, row, space-evenly, center);
+    padding: 10px 0 10px 0;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+
+    a {
+      @include styled-links;
+    }
+  }
+
+  .introduction {
+    @include flex(nowrap, column, center, center);
+
+    .content-heading {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+
+    .preamble-container {
+      max-width: 560px;
+
+      .content-preamble {
+        font-size: 14px;
+        padding: 10px;
+        margin: 0 5px 0 5px;
+        text-align: justify;
+      }
+    }
+
+    .topics-heading {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+  }
+
+  .main {
+    width: 100%;
+    @include flex-center;
+
+    .flex-container {
+      width: 1000px;
+      @include flex-center;
+
+      .main-container {
+        width: 95%;
+        margin: 10px;
+        border: 1px solid $bottle-green-dark;
+        border-radius: 5px;
+
+        h4 {
+          margin: 15px 0 10px 0;
+          font-size: 16px;
+        }
+        
+        .topics-container {
+          width: 100%;
+          @include flex(wrap, row, space-around, center);
+
+          .article {
+            width: 270px;
+            height: 190px;
+            border: 5px solid $bottle-green-dark;
+            border-radius: 5px;
+            margin: 10px 0 10px 0;
+            transition: 0.5s;
+
+            &:hover {
+              border-color: $bottle-green-light;
+            }
+
+            .text-container {
+              padding-bottom: 10px;
+              background: $text-container-color;
+              width: 270px;
+              height: 130px;
+            }
+  
+            h5 {
+              margin: 20px 0 10px 0;
+              padding-top: 10px;
+              font-size: 14px;
+            }
+  
+            .article-paras {
+              font-size: 14px;
+              padding: 0 10px 0 10px;
+              margin: 0 5px 0 5px;
+              text-align: center;
+            }
+          }
+
+          .article.design {
+            background-image: url("/images/design-image.jpg");
+            @include background-img-styling;
+          }
+
+          .article.utveckling {
+            background-image: url("/images/utveckling-image.jpeg");
+            @include background-img-styling;
+          }
+
+          .article.länkar {
+            background: $bottle-green-light;
+            border-color: $bottle-green-light;
+            color: black;
+            &:hover {
+              border-color: $bottle-green-dark;
+            }
+          }
+
+          a {
+            @include styled-links;
+            &:hover {
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .footer {
+    padding-bottom: 10px;
+    background:$bottle-green-dark;
+    padding: 10px 0 15px 0;
+    color: white;
+
+    .footer-heading {
+      font-size: 16px;
+      margin: 10px 0 5px 0;
+    }
+
+    p {
+      font-size: 14px;
+      margin: 2px;
+    }
+
+    p:last-of-type {
+      margin-bottom: 10px;
+    }
+
+    a {
+      @include styled-links;
+      border-top: 1px solid white;
+      padding-top: 5px;
+      color: white;
+    }
+  }
+
+}
