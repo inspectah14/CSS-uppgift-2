@@ -197,14 +197,14 @@
 }
 
 .wrapper .main .flex-container .main-container .topics-container .article.design {
-  background-image: url("/images/design-image.jpg");
+  background-image: url("images/design-image.jpg");
   background-color: #2baa95;
   background-position: center;
   background-size: cover;
 }
 
 .wrapper .main .flex-container .main-container .topics-container .article.utveckling {
-  background-image: url("/images/utveckling-image.jpeg");
+  background-image: url("images/utveckling-image.jpeg");
   background-color: #2baa95;
   background-position: center;
   background-size: cover;

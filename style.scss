@@ -161,12 +161,12 @@ $heading-font: 'Open Sans', Arial, sans-serif;
           }
 
           .article.design {
-            background-image: url("/images/design-image.jpg");
+            background-image: url("images/design-image.jpg");
             @include background-img-styling;
           }
 
           .article.utveckling {
-            background-image: url("/images/utveckling-image.jpeg");
+            background-image: url("images/utveckling-image.jpeg");
             @include background-img-styling;
           }
 
